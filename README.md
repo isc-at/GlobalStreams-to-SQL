@@ -1,3 +1,5 @@
+<p align="right"><img src="https://github.com/isc-at/CPIPE/blob/master/archived.jpg"/></p>    
+
 ## The Idea  
 In general Global Streams are data objects embedded in Classes / Tables.  
 Using and viewing them with SQL is normally a part of the access to the containing tables.  
@@ -38,29 +40,11 @@ and czip
 
 with SQL the compressed data can be viewed unzipped.
 
-### Prerequisites
-Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
-
-### Installation 
-Clone/git pull the repo into any local directory
-```
-git https://github.com/rcemper/GlobalStreams-to-SQL.git
-```
-Run the IRIS container with your project: 
-```
-docker-compose up -d --build
-```
 ## How to Test it
-
 First, you may check the UnitTest running during installation   
 http://localhost:42773/csp/sys/%25UnitTest.Portal.Indices.cls?Index=1&$NAMESPACE=USER
 
-Then,
-```
-docker-compose exec iris iris session iris
-```
-or use [Webterminal](http://localhost:42773/terminal/)  
-
+Then, use a console or a terminal session
 For testing we have to know the names of the Stream Globals  
 I have prepared 4 globals with both flat abnd complessed content in sequence.   
 We load them first:  ^txtS,^jpgS,^mp3S,^pdfS    
@@ -100,7 +84,3 @@ SELECT * FROM RCC.GSTREAM WHERE RCC.USE('^jpgS')=1
 You can see it in action in my [Video](https://youtu.be/YPzdLceFmMg)
 
 [Article in DC](https://community.intersystems.com/post/global-streams-sql)
-
-[Online Demo](https://globalstreams-to-sql.demo.community.intersystems.com/csp/sys/UtilHome.csp)   
-[Online Terminal](https://globalstreams-to-sql.demo.community.intersystems.com/terminal/)   
-
